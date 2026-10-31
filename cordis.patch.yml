@@ -1,0 +1,15 @@
+# dsh-firefly-bg —— bundle patch
+#
+# 装上之后只要在 profile 的 `dsh.profile.bundles` 里列出 `dsh-firefly-bg` 就生效：
+#   dsh plugin --profile desktop add link:C:/dsh/dsh-firefly-bg
+#
+# 里面只有一行：宿主半端（本地图片服务）。浏览器半端由 package.json 的
+# `dsh.client` 清单声明，Loader 会自动把它挂进网页。
+
+- insert:
+    # 宿主半端：把插件自带的 assets/wallpapers 用同源 HTTP 路由发出去
+    #   GET /api/firefly-bg/list          壁纸清单
+    #   GET /api/firefly-bg/img/<id>      原图
+    #   GET /api/firefly-bg/thumb/<id>    缩略图
+    - id: firefly-bg
+      name: dsh-firefly-bg

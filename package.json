@@ -1,0 +1,70 @@
+{
+  "name": "dsh-firefly-bg",
+  "version": "1.0.0",
+  "description": "Firefly-themed wallpaper background for the DeepSeek Harness Web GUI: four hand-picked wallpapers, a canvas firefly field, and sliders for veil, blur, particles and panel transparency. Works in dark and light themes.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "assets",
+    "README.md",
+    "LICENSE",
+    "screenshots.json",
+    "icon.png"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0"
+  },
+  "icon": "./icon.png",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levitate403/dsh-firefly-bg.git"
+  },
+  "homepage": "https://github.com/levitate403/dsh-firefly-bg#readme",
+  "bugs": {
+    "url": "https://github.com/levitate403/dsh-firefly-bg/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-theme",
+    "deepseek-harness",
+    "wallpaper",
+    "background",
+    "theme",
+    "firefly",
+    "honkai-star-rail"
+  ],
+  "license": "MIT",
+  "author": "levitate403",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-runtime": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-client-runtime": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}
